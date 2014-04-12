@@ -1,0 +1,8 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+  a(href='/login') Login
+  p The following link will not work (redirects you back to /)
+  a(href='/users') Users

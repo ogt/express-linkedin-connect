@@ -1,0 +1,13 @@
+/.*
+/*.log
+!/.coverignore
+!/.gitignore
+!/.jshintrc
+!/.travis.yml
+!/.sampleenv
+node_modules/
+*.swp
+*.swo
+/*.exe
+/*.project
+.env*

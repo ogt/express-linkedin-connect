@@ -1,0 +1,1 @@
+web: nodemon -e js,ejs,css app.js 

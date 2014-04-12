@@ -1,0 +1,9 @@
+extends layout
+
+block content
+  h1= title
+  p Hi #{user}
+  p Welcome to #{title}
+  a(href='/logout') Logout
+  p The following link should work 
+  a(href='/users') Users
