@@ -2,7 +2,7 @@
   "name": "express-linkedin-connect",
   "description": "Adds linkedin connect routes to any express site ",
   "homepage": "https://github.com/ogt/express-linkedin-connect",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "repository": {
     "type": "git",
     "url": "git://github.com/ogt/express-linkedin-connect.git"
