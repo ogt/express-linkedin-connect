@@ -31,8 +31,6 @@ describe('Testing express-linkedin-connect', function() {
     describe('Public Home', function () {
         it('should be accessible with no auth', function (done) {
             var app = express();
-            app.use(express.urlencoded());
-            app.use(express.methodOverride());
             app.use(express.cookieParser(env.SESSION_SECRET));
             app.use(express.session());
             require('../')(db, app, env); // require login
@@ -51,8 +49,6 @@ describe('Testing express-linkedin-connect', function() {
     describe('Unauthorized access', function () {
         it('should return 302', function (done) {
             var app = express();
-            app.use(express.urlencoded());
-            app.use(express.methodOverride());
             app.use(express.cookieParser(env.SESSION_SECRET));
             app.use(express.session());
             require('../')(db, app, env); // require login
