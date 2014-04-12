@@ -1,11 +1,12 @@
-Node module for linkedin-connect for express
+Linkedin-connect for express
 --
 [![Build Status](https://travis-ci.org/ogt/express-linkedin-connect.png)](https://travis-ci.org/ogt/express-linkedin-connect)
 
 ## Description
 
-This module abstracts the boilerplate clode that you need to add to your express site when using the linkedin passport strategy.
+This module abstracts the boilerplate clode that you need to add to your express (3.x) site when using the linkedin passport strategy.
 It captures all the configuration elements in a single parameter, provides defaults to allow someone to use "login-via-linkedin" with the minimal possible code changes.
+Note that this is not currently working with express 4.0.
 
 Here is how to use it with the default express demo code (this code is also include in the examples folder)
 
@@ -13,9 +14,8 @@ So lets see what changes are needed.
 Create the default express app
 ```
 > express --sessions example
-> ls example
-./             app.js        package.json  routes/
-../            node_modules/ public/       views/
+> cd example
+> npm install
 ```
 Add your .env file that includes the linkedin api keys
 ```
@@ -32,7 +32,7 @@ MONGOLAB_URI=local
 and a Procfile_dev (be ready for pushing to heroku)
 ```
 > cat > Procfile_dev
-web: nodemon -e js,ejs,css app.js 
+web: nodemon -e js,jade,css app.js
 ^D
 > foreman start -f Procfile_dev 
 16:33:46 web.1  | started with pid 77766
