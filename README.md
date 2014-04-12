@@ -1,4 +1,4 @@
-Adds login-via-linkedin functionality to any express site
+Node module for linkedin-connect for express
 --
 [![Build Status](https://travis-ci.org/ogt/express-linkedin-connect.png)](https://travis-ci.org/ogt/express-linkedin-connect)
 
