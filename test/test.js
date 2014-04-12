@@ -1,5 +1,7 @@
 var request = require('supertest')
   , should = require('should')
+  , session = require('express-session')
+  , cookieParser = require('cookie-parser')
   , express = require('express');
 
 var env = {
@@ -31,8 +33,8 @@ describe('Testing express-linkedin-connect', function() {
     describe('Public Home', function () {
         it('should be accessible with no auth', function (done) {
             var app = express();
-            app.use(express.cookieParser(env.SESSION_SECRET));
-            app.use(express.session());
+            app.use(cookieParser(env.SESSION_SECRET));
+            app.use(session());
             require('../')(db, app, env); // require login
 
             app.get('/', function (req, res) {
@@ -49,8 +51,8 @@ describe('Testing express-linkedin-connect', function() {
     describe('Unauthorized access', function () {
         it('should return 302', function (done) {
             var app = express();
-            app.use(express.cookieParser(env.SESSION_SECRET));
-            app.use(express.session());
+            app.use(cookieParser(env.SESSION_SECRET));
+            app.use(session());
             require('../')(db, app, env); // require login
 
             app.get('/', function (req, res) {

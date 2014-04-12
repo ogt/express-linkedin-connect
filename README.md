@@ -12,7 +12,7 @@ Here is how to use it with the default express demo code (this code is also incl
 So lets see what changes are needed.
 Create the default express app
 ```
-> express --sessions example
+> express example
 > ls example
 ./             app.js        package.json  routes/
 ../            node_modules/ public/       views/
