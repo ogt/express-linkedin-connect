@@ -47,6 +47,21 @@ For the purpose of this demononstration we will make the users page accessible t
 
 So we need to change the `app.js` code as follows:
 
+![image](https://cloud.githubusercontent.com/assets/153419/2686021/d5986168-c1df-11e3-84b9-e5e429ced238.png)
+
+And then change the routes:
+
+![image](https://cloud.githubusercontent.com/assets/153419/2686023/db893e1c-c1df-11e3-9c8b-674280947c04.png)
+
+add the private home that is rendered if a signedin person lands on `/`
+
+![image](https://cloud.githubusercontent.com/assets/153419/2686024/e1a581c0-c1df-11e3-9ae2-cace308df7a6.png)
+
+and modify the public `/` page to include the login link
+
+![image](https://cloud.githubusercontent.com/assets/153419/2686025/e6a3125a-c1df-11e3-83aa-545636fcb99e.png)
+
+
 and practically thats it.
 
 The parameters of the function are :
