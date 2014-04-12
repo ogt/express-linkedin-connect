@@ -13,9 +13,6 @@ So lets see what changes are needed.
 Create the default express app
 ```
 > express example
-> ls example
-./             app.js        package.json  routes/
-../            node_modules/ public/       views/
 ```
 Add your .env file that includes the linkedin api keys
 ```
@@ -32,26 +29,27 @@ MONGOLAB_URI=local
 and a Procfile_dev (be ready for pushing to heroku)
 ```
 > cat > Procfile_dev
-web: nodemon -e js,ejs,css app.js 
+web: nodemon -e js,jade,css ./bin/www
 ^D
 > foreman start -f Procfile_dev 
-16:33:46 web.1  | started with pid 77766
-16:33:46 web.1  | 11 Apr 16:33:46 - [nodemon] v1.0.14
-16:33:46 web.1  | 11 Apr 16:33:46 - [nodemon] to restart at any time, enter `rs`
-16:33:46 web.1  | 11 Apr 16:33:46 - [nodemon] watching: *.*
-16:33:46 web.1  | 11 Apr 16:33:46 - [nodemon] starting `node app.js`
-16:33:47 web.1  | Express server listening on port 3000
+23:51:53 web.1  | started with pid 87597
+23:51:54 web.1  | 11 Apr 23:51:54 - [nodemon] v1.0.14
+23:51:54 web.1  | 11 Apr 23:51:54 - [nodemon] to restart at any time, enter `rs`
+23:51:54 web.1  | 11 Apr 23:51:54 - [nodemon] watching: *.*
+23:51:54 web.1  | 11 Apr 23:51:54 - [nodemon] starting `node ./bin/www`
 ```
 So at this point we have this minimal express app that comes with two pages (`views/index.jade` and `views/users.jade`) and their corresponding routes.
 For the purpose of this demononstration we will make the users page accessible to signedin users only, we will change a bit the `index` view to include a login link and we will create a variant of the index page ``views/home.jade` that is returned instead of the `index` when the user is signed in .
 
 So we need to change the `app.js` code as follows:
 
-![image](https://cloud.githubusercontent.com/assets/153419/2686021/d5986168-c1df-11e3-84b9-e5e429ced238.png)
+![image](https://cloud.githubusercontent.com/assets/153419/2686590/cc29369a-c20f-11e3-8726-574a48b9b6cc.png)
+
 
 And then change the routes:
 
-![image](https://cloud.githubusercontent.com/assets/153419/2686023/db893e1c-c1df-11e3-9c8b-674280947c04.png)
+![image](https://cloud.githubusercontent.com/assets/153419/2686591/d3f1fe5c-c20f-11e3-939b-07e2abdecb9e.png)
+![image](https://cloud.githubusercontent.com/assets/153419/2686589/c37d32f8-c20f-11e3-8224-eade24a877fa.png)
 
 add the private home that is rendered if a signedin person lands on `/`
 
