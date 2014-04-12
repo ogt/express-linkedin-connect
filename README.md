@@ -1,8 +1,9 @@
-Adds login-via-linked functionality to any express site
+Adds login-via-linkedin functionality to any express site
 --
 [![Build Status](https://travis-ci.org/ogt/express-linkedin-connect.png)](https://travis-ci.org/ogt/express-linkedin-connect)
 
 ## Description
+
 This module abstracts the boilerplate clode that you need to add to your express site when using the linkedin passport strategy.
 It captures all the configuration elements in a single parameter, provides defaults to allow someone to use "login-via-linkedin" with the minimal possible code changes.
 
