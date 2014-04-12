@@ -48,7 +48,7 @@ For the purpose of this demononstration we will make the users page accessible t
 So we need to change the `app.js` code as follows:
 
 and practically thats it.
-```
+
 The parameters of the function are :
  - db : the connected mongo db variable
  - app : the express app
@@ -56,6 +56,7 @@ The parameters of the function are :
  - cfg : optional configuration variables (see below).
 
 The default cfg is :
+
 ```
 var defaultCfg = {
     linkedin_scope : ['r_basicprofile' ],
@@ -75,7 +76,9 @@ var defaultCfg = {
 };
 defaultCfg.updateProfile = defaultCfg.initProfile;
 ```
+
 Here is a brief description of the options:
+
 - `linkedin_scope` : this a list of the scopes that will be requested by linkedin. You need to go to your app and edit its properties and chose the right scopes for your app. The `r_basicprofile`, `r_fullprofile`, `r_emailaddress` are the ones I have used in the past. Described in detail [here](https://developer.linkedin.com/documents/profile-fields). The scope is checked as part of the authentication.
 - `linkedin_fields` : this is a list of the fields that will be requested from the API. Note that in the linkedin model these are not the names returned by the API, the represent at a higher level the attributes. E.g. the 'name' will results in various name-related fields coming back. The url above will give you a list of the fields allowed within the scope requested.
 - `initProfile`, `updateProfile` : these are mapping function that you can define topick and chose which fields you want from the linkedin object returned upon auth. You almost always will need to change these functions to pick and chose the fields you want. There is a separate updateProfile function, because I found that during update I prefer to keep my fields - e.g. emailAddress - you may use linkedin's emailaddress as initial value - but the user may opted to change in your app... so you would rather not overwrite the emailAddress unless as part of the initial login.
